@@ -41,4 +41,4 @@ includeSubs("kollections", "../kollections", "atomic", "interoperable")
 
 // submodules
 includeSubs("koncurrent-executors", "../koncurrent/executors", "core", "coroutines", "mock")
-includeSubs("cinematic-live", "live", "core", "coroutines", "compose", "react")
+includeSubs("cinematic-live", "live", "core", "coroutines", "compose", "react", "test", "kollections")

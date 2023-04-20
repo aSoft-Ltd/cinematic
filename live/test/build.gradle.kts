@@ -5,21 +5,27 @@ plugins {
 }
 
 kotlin {
-    jvm { library() }
-    js(IR) { library() }
-//    val nativeTargets = nativeTargets(true)
-    val nativeTargets = linuxTargets(true)
+    if (Targeting.JVM) jvm { library() }
+
+    if (Targeting.JS) js(IR) { library() }
+
+//    if (Targeting.WASM) wasm { library() }
+
+    val osxTargets = if (Targeting.OSX) osxTargets() else listOf()
+//    val ndkTargets = if (Targeting.NDK) ndkTargets() else listOf()
+    val linuxTargets = if (Targeting.LINUX) linuxTargets() else listOf()
+//    val mingwTargets = if (Targeting.MINGW) mingwTargets() else listOf()
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(project(":expect-core"))
-                api(projects.liveCore)
+                api(projects.kommanderCore)
+                api(projects.cinematicLiveCore)
             }
         }
 
         val commonTest by getting {
             dependencies {
-                implementation(project(":expect-coroutines"))
+                implementation(projects.kommanderCoroutines)
             }
         }
     }

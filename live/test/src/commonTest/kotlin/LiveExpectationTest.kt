@@ -41,17 +41,4 @@ class LiveExpectationTest {
         val (s1) = expect(l).toHaveGoneThrough3<Int, Int, Int>()
         assertEquals(11, s1)
     }
-
-    @Test
-    @Ignore // TODO: Try to make it work with nulls
-    fun should_work_with_nullables() {
-        val l: MutableLive<Int?> = mutableLiveOf(10)
-        l.value = 11
-        l.value = null
-        l.value = 13
-        val (s1, s2, s3, _) = expect(l).toHaveGoneThrough3<Int, Int?, Int>()
-        assertEquals(11, s1)
-        assertEquals(null, s2)
-        assertEquals(13, s3)
-    }
 }

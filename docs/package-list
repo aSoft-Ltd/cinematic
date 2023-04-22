@@ -1,0 +1,45 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:////PointingToDeclaration/cinematic-live-react/[root]/index.html
+$dokka.location://useLive/#live.Live[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/cinematic-live-react/[root]/use-live.html
+$dokka.location://useLiveWithExecutor/#live.Live[TypeParam(bounds=[kotlin.Any?])]#koncurrent.Executor/PointingToDeclaration/cinematic-live-react/[root]/use-live-with-executor.html
+$dokka.location://useNullableLive/#live.Live[TypeParam(bounds=[kotlin.Any?])]?/PointingToDeclaration/cinematic-live-react/[root]/use-nullable-live.html
+$dokka.location://useNullableLiveWithExecutor/#koncurrent.Executor#live.Live[TypeParam(bounds=[kotlin.Any?])]?/PointingToDeclaration/cinematic-live-react/[root]/use-nullable-live-with-executor.html
+module:cinematic-live-compose
+live
+module:cinematic-live-core
+live
+module:cinematic-live-coroutines
+live
+module:cinematic-live-kollections
+live
+module:cinematic-live-react
+live
+module:cinematic-live-test
+live
+live.internal
+module:functions-core
+functions
+module:kollections-atomic
+kollections
+module:kollections-interoperable
+kollections
+kollections.internal
+kollections.serializers
+module:kommander-core
+expect
+expect.internal
+kommander
+kommander.internal
+module:kommander-coroutines
+expect
+kommander
+module:koncurrent-executors-core
+koncurrent
+koncurrent.promise
+module:koncurrent-executors-coroutines
+koncurrent
+koncurrent.coroutines
+koncurrent.promise
+module:koncurrent-executors-mock
+koncurrent

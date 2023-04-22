@@ -1,8 +1,9 @@
 plugins {
     kotlin("js")
     id("tz.co.asoft.library")
-    signing
 }
+
+description = "An extension of the Live<T> targeted for react"
 
 kotlin {
     js(IR) { browserLib() }
@@ -16,8 +17,3 @@ kotlin {
         }
     }
 }
-
-aSoftOSSLibrary(
-    version = asoft.versions.root.get(),
-    description = "An extension of the Live<T> targeted for react"
-)

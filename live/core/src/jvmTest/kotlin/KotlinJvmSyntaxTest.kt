@@ -1,6 +1,6 @@
-import expect.expect
+import kommander.expect
 import koncurrent.MockExecutor
-import live.*
+import cinematic.*
 import kotlin.test.Test
 
 class KotlinJvmSyntaxTest {

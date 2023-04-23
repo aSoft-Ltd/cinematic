@@ -1,14 +1,14 @@
 import koncurrent.MockExecutors;
-import live.Live;
+import cinematic.Live;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import live.MutableLive;
-import live.WatchMode;
+import cinematic.MutableLive;
+import cinematic.WatchMode;
 
-import static expect.ExpectBuilders.*;
+import static kommander.ExpectBuilders.*;
 
 public class JavaSyntaxTest {
 

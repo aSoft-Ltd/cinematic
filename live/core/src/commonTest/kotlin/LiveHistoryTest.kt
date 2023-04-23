@@ -1,6 +1,6 @@
-import expect.expect
-import expect.toBeEqualTo
-import live.mutableLiveOf
+import kommander.expect
+import kommander.toBeEqualTo
+import cinematic.mutableLiveOf
 import kotlin.test.Test
 
 class LiveHistoryTest {

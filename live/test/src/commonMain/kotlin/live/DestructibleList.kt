@@ -2,6 +2,7 @@ package live
 
 import kotlin.jvm.JvmInline
 
+@Deprecated("use cinematic instead")
 @JvmInline
 value class DestructibleList<S1, S2, S3, S4, S5, S6>(private val value: List<Any?>) : List<Any?> by value {
     operator fun component1(): S1 = value[0] as S1

@@ -7,6 +7,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.DisposableEffect
 
+@Deprecated("use cinematic instead")
 @Composable
 fun <S> Live<S>.watchAsState(): S {
     var state by remember { mutableStateOf(value) }

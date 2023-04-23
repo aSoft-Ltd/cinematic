@@ -7,6 +7,7 @@ import kollections.MutableMap
 import kollections.MutableMapLike
 import kotlin.js.JsExport
 
+@Deprecated("use cinematic instead")
 interface MutableLiveMap<K, V> : MutableMapLike<K, V>, LiveMap<K, V> {
     fun <R> update(block: (MutableMap<K, V>) -> R): R
 }

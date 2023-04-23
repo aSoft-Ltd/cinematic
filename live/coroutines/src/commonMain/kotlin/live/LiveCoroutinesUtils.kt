@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 
 
+@Deprecated("use cinematic instead")
 fun <S> Live<S>.toFlow(): Flow<S> = callbackFlow {
     val watcher = watch(WatchMode.Eagerly, SynchronousExecutor) { trySend(it) }
     awaitClose { watcher.stop() }

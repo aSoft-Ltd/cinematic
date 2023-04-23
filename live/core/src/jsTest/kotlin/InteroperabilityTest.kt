@@ -1,10 +1,10 @@
-import expect.expect
+import kommander.expect
 import koncurrent.MockExecutor
 import koncurrent.Promise
 import koncurrent.setTimeout
-import live.WatchMode
-import live.liveOf
-import live.mutableLiveOf
+import cinematic.WatchMode
+import cinematic.liveOf
+import cinematic.mutableLiveOf
 import kotlin.test.Test
 
 class InteroperabilityTest {

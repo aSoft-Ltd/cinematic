@@ -1,8 +1,8 @@
-import expect.expect
+import kommander.expect
 import kotlinx.coroutines.*
 import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
-import live.*
+import cinematic.*
 import kotlin.test.Test
 
 class SuspendingUtilsTest {

@@ -10,8 +10,10 @@ import react.useEffect
 import react.useEffectOnce
 import react.useState
 
+@Deprecated("use cinematic instead")
 fun <S> useNullableLive(live: Live<S>?): S? = useNullableLiveWithExecutor(SynchronousExecutor, live)
 
+@Deprecated("use cinematic instead")
 fun <S> useNullableLiveWithExecutor(executor: Executor, live: Live<S>?): S? {
     var state by useState(live?.value)
     useEffect(live, executor) {
@@ -22,8 +24,10 @@ fun <S> useNullableLiveWithExecutor(executor: Executor, live: Live<S>?): S? {
     return state
 }
 
+@Deprecated("use cinematic instead")
 fun <S> useLive(live: Live<S>): S = useLiveWithExecutor(live, SynchronousExecutor)
 
+@Deprecated("use cinematic instead")
 fun <S> useLiveWithExecutor(live: Live<S>, executor: Executor): S {
     var state by useState(live.value)
     useEffectOnce {

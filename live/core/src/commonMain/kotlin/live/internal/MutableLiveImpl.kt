@@ -8,6 +8,7 @@ import live.Watcher
 import kotlin.math.max
 import kotlin.math.min
 
+@Deprecated("use cinematic instead")
 internal class MutableLiveImpl<S>(
     state: S, capacity: Int
 ) : AbstractLive<S>(), MutableLive<S> {

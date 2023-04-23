@@ -9,6 +9,7 @@ import kotlin.jvm.JvmSynthetic
 /**
  * A wrapper around a [value] that can be watched as it changes
  */
+@Deprecated("use cinematic instead")
 expect interface Watchable<out S> {
 
     val value: S

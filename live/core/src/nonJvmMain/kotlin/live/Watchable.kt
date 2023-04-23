@@ -12,6 +12,7 @@ import kotlin.js.JsName
 /**
  * A wrapper around a [value] that can be watched as it changes
  */
+@Deprecated("use cinematic instead")
 actual interface Watchable<out S> {
 
     actual val value: S

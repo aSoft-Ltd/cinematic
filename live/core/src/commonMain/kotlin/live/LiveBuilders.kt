@@ -9,11 +9,13 @@ import live.internal.MutableLiveImpl
 import kotlin.js.JsExport
 import kotlin.jvm.JvmName
 
+@Deprecated("use cinematic instead")
 fun <S> mutableLiveOf(
     value: S,
     capacity: Int = DEFAULT_HISTORY_CAPACITY
 ): MutableLive<S> = MutableLiveImpl(value, capacity)
 
+@Deprecated("use cinematic instead")
 fun <S> liveOf(
     value: S
 ): Live<S> = MutableLiveImpl(value, 1)

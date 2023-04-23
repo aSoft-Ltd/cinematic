@@ -5,6 +5,7 @@ import live.Watcher
 import kotlin.js.JsExport
 import kotlin.jvm.JvmSynthetic
 
+@Deprecated("use cinematic instead")
 internal class WatcherImpl<in V> internal constructor(
     private val container: MutableList<WatcherImpl<V>>,
     private val executor: Executor,

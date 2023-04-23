@@ -1,12 +1,8 @@
-import expect.expect
-import live.mutableLiveMapOf
-import live.mutableLiveOf
+import kommander.expect
+import cinematic.mutableLiveMapOf
 import kotlin.test.Test
 
 class LiveMapTest {
-    val W1 = 0
-    val W2 = 1
-
     @Test
     fun should_have_a_valid_syntax() {
         val live = mutableLiveMapOf<Int, String>()

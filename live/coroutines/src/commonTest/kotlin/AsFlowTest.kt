@@ -1,9 +1,9 @@
-import expect.expect
-import expect.toBe
+import kommander.expect
+import kommander.toBe
 import kotlinx.coroutines.*
 import kotlinx.coroutines.test.runTest
-import live.mutableLiveOf
-import live.toFlow
+import kommander.mutableLiveOf
+import kommander.toFlow
 import kotlin.test.Test
 
 class AsFlowTest {

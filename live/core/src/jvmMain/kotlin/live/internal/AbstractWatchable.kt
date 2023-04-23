@@ -6,6 +6,7 @@ import live.WatchMode
 import live.Watchable
 import live.Watcher
 
+@Deprecated("use cinematic instead")
 internal actual abstract class AbstractWatchable<out S> : Watchable<S> {
 
     protected actual abstract fun watchRaw(callback: ((state: S) -> Unit)?, mode: WatchMode?, executor: Executor?): Watcher

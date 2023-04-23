@@ -7,6 +7,7 @@ import kotlin.js.JsExport
 import kotlin.js.JsName
 import kotlin.jvm.JvmSynthetic
 
+@Deprecated("use cinematic instead")
 actual interface MutableLive<S> : Live<S> {
     actual override val history: MutableList<S>
 

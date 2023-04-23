@@ -2,6 +2,7 @@ package live
 
 import kotlin.jvm.JvmSynthetic
 
+@Deprecated("use cinematic instead")
 expect interface MutableLive<S> : Live<S> {
     override val history: MutableList<S>
 

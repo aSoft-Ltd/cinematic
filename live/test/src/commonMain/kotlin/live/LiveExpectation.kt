@@ -3,6 +3,7 @@ package live
 import expect.CollectionExpectation
 import kotlin.reflect.KClass
 
+@Deprecated("use cinematic instead")
 interface LiveExpectation<out S> : CollectionExpectation<S> {
 
     fun toBeIn(state: @UnsafeVariance S)

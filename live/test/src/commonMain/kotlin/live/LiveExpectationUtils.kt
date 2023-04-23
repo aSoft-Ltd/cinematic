@@ -1,11 +1,13 @@
 package live
 
+@Deprecated("use cinematic instead")
 inline fun <
         reified S1 : Any
         > LiveExpectation<Any?>.toHaveGoneThrough1() = DestructibleList<S1, Any?, Any?, Any?, Any?, Any?>(
     toHaveGoneThrough(S1::class)
 )
 
+@Deprecated("use cinematic instead")
 inline fun <
         reified S1 : Any,
         reified S2 : Any
@@ -13,6 +15,7 @@ inline fun <
     toHaveGoneThrough(S1::class, S2::class)
 )
 
+@Deprecated("use cinematic instead")
 inline fun <
         reified S1 : Any,
         reified S2 : Any,
@@ -21,6 +24,7 @@ inline fun <
     toHaveGoneThrough(S1::class, S2::class, S3::class)
 )
 
+@Deprecated("use cinematic instead")
 inline fun <
         reified S1 : Any,
         reified S2 : Any,
@@ -30,6 +34,7 @@ inline fun <
     toHaveGoneThrough(S1::class, S2::class, S3::class, S4::class)
 )
 
+@Deprecated("use cinematic instead")
 inline fun <
         reified S1 : Any,
         reified S2 : Any,
@@ -40,6 +45,7 @@ inline fun <
     toHaveGoneThrough(S1::class, S2::class, S3::class, S4::class, S5::class)
 )
 
+@Deprecated("use cinematic instead")
 inline fun <
         reified S1 : Any,
         reified S2 : Any,

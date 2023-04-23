@@ -1,4 +1,4 @@
-import live.mutableLiveOf
+import cinematic.mutableLiveOf
 import kotlin.test.Test
 
 class LiveTest {

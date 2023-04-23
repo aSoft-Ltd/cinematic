@@ -4,6 +4,7 @@ import live.Live
 import live.MutableLive
 import live.mutableLiveOf
 
+@Deprecated("use cinematic instead")
 internal abstract class AbstractLive<S> : AbstractLiveMonoid<S>(), Live<S> {
 
     val mapQueue = mutableListOf<LiveQueueItem<S, Any?>>()

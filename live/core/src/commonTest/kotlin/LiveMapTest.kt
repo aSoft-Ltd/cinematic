@@ -1,5 +1,5 @@
-import expect.expect
-import live.mutableLiveOf
+import kommander.expect
+import cinematic.mutableLiveOf
 import kotlin.test.Test
 import kotlin.test.fail
 

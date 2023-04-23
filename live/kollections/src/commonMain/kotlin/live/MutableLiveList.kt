@@ -8,6 +8,7 @@ import kollections.MutableCollectionLike
 import kollections.MutableList
 import kotlin.js.JsExport
 
+@Deprecated("use cinematic instead")
 interface MutableLiveList<E> : MutableCollectionLike<E>, MutableLive<List<E>>, LiveList<E> {
     fun <R> update(block: (MutableList<E>) -> R): R
 }

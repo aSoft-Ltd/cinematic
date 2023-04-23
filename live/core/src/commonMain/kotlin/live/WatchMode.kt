@@ -9,6 +9,7 @@ import kotlin.jvm.JvmField
 /**
  * A Mode on which one can watch a [Live] object
  */
+@Deprecated("use cinematic instead")
 enum class WatchMode {
     /**
      * A mode of watching a live object without skipping even a single value

@@ -5,6 +5,20 @@ $dokka.location://useLive/#live.Live[TypeParam(bounds=[kotlin.Any?])]/PointingTo
 $dokka.location://useLiveWithExecutor/#live.Live[TypeParam(bounds=[kotlin.Any?])]#koncurrent.Executor/PointingToDeclaration/cinematic-live-react/[root]/use-live-with-executor.html
 $dokka.location://useNullableLive/#live.Live[TypeParam(bounds=[kotlin.Any?])]?/PointingToDeclaration/cinematic-live-react/[root]/use-nullable-live.html
 $dokka.location://useNullableLiveWithExecutor/#koncurrent.Executor#live.Live[TypeParam(bounds=[kotlin.Any?])]?/PointingToDeclaration/cinematic-live-react/[root]/use-nullable-live-with-executor.html
+$dokka.location:koncurrent//setTimeout/#kotlin.Any#kotlin.Int#kotlin.Array[kotlin.Any?]/PointingToDeclaration/koncurrent-executors-core/koncurrent/[wasm]set-timeout.html
+$dokka.location:koncurrent/Promise.Companion///PointingToDeclaration/koncurrent-executors-core/koncurrent/[wasm]-promise/-companion/index.html
+$dokka.location:koncurrent/Promise.Companion/all/#kotlin.Array[koncurrent.Promise[TypeParam(bounds=[kotlin.Any?])]]/PointingToDeclaration/koncurrent-executors-core/koncurrent/[wasm]-promise/-companion/all.html
+$dokka.location:koncurrent/Promise.Companion/race/#kotlin.Array[koncurrent.Promise[TypeParam(bounds=[kotlin.Any?])]]/PointingToDeclaration/koncurrent-executors-core/koncurrent/[wasm]-promise/-companion/race.html
+$dokka.location:koncurrent/Promise.Companion/reject/#kotlin.Throwable/PointingToDeclaration/koncurrent-executors-core/koncurrent/[wasm]-promise/-companion/reject.html
+$dokka.location:koncurrent/Promise.Companion/resolve/#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/koncurrent-executors-core/koncurrent/[wasm]-promise/-companion/resolve.html
+$dokka.location:koncurrent/Promise.Companion/resolve/#koncurrent.Promise[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/koncurrent-executors-core/koncurrent/[wasm]-promise/-companion/resolve.html
+$dokka.location:koncurrent/Promise///PointingToDeclaration/koncurrent-executors-core/koncurrent/[wasm]-promise/index.html
+$dokka.location:koncurrent/Promise/Promise/#kotlin.Function2[kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Unit],kotlin.Function1[kotlin.Throwable,kotlin.Unit],kotlin.Unit]/PointingToDeclaration/koncurrent-executors-core/koncurrent/[wasm]-promise/-promise.html
+$dokka.location:koncurrent/Promise/catch/#kotlin.Function1[kotlin.Throwable,TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/koncurrent-executors-core/koncurrent/[wasm]-promise/catch.html
+$dokka.location:koncurrent/Promise/finally/#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/koncurrent-executors-core/koncurrent/[wasm]-promise/finally.html
+$dokka.location:koncurrent/Promise/then/#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?])]?#kotlin.Function1[kotlin.Throwable,TypeParam(bounds=[kotlin.Any?])]?/PointingToDeclaration/koncurrent-executors-core/koncurrent/[wasm]-promise/then.html
+$dokka.location:koncurrent/SetTimeoutExecutor///PointingToDeclaration/koncurrent-executors-core/koncurrent/[wasm]-set-timeout-executor/index.html
+$dokka.location:koncurrent/SetTimeoutExecutor/execute/#functions.Runnable/PointingToDeclaration/koncurrent-executors-core/koncurrent/[wasm]-set-timeout-executor/execute.html
 module:cinematic-live-compose
 live
 module:cinematic-live-core

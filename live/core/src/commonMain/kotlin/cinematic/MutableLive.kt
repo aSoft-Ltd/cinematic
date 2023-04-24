@@ -1,5 +1,10 @@
+@file:JsExport
+@file:Suppress("NON_EXPORTABLE_TYPE")
+
 package cinematic
 
+import kotlin.js.JsExport
+import kotlin.js.JsName
 import kotlin.jvm.JvmSynthetic
 
 interface MutableLive<S> : Live<S> {
@@ -20,6 +25,7 @@ interface MutableLive<S> : Live<S> {
     /**
      * Notify the watchers without changing the underlying value
      */
+    @JsName("dispatchValue")
     fun dispatch(value: S)
 
     fun dispatch()

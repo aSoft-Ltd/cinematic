@@ -2,8 +2,8 @@ import kommander.expect
 import kommander.toBe
 import kotlinx.coroutines.*
 import kotlinx.coroutines.test.runTest
-import kommander.mutableLiveOf
-import kommander.toFlow
+import cinematic.mutableLiveOf
+import cinematic.toFlow
 import kotlin.test.Test
 
 class AsFlowTest {

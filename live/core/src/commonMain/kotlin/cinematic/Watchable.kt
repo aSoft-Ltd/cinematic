@@ -1,10 +1,13 @@
+@file:JsExport
+@file:Suppress("NON_EXPORTABLE_TYPE")
+
 package cinematic
 
 import koncurrent.Executor
 import cinematic.WatchMode.Casually
 import cinematic.WatchMode.Eagerly
+import kotlin.js.JsExport
 import kotlin.js.JsName
-import kotlin.jvm.JvmSynthetic
 
 /**
  * A wrapper around a [value] that can be watched as it changes
@@ -21,7 +24,6 @@ interface Watchable<out S> {
      * @return a [Watcher]
      */
     @JsName("watchWithModeAndExecutor")
-    @JvmSynthetic
     fun watch(callback: (state: S) -> Unit, mode: WatchMode, executor: Executor): Watcher
 
     /**
@@ -32,7 +34,6 @@ interface Watchable<out S> {
      * @return a [Watcher]
      */
     @JsName("watchWithExecutor")
-    @JvmSynthetic
     fun watch(callback: (state: S) -> Unit, executor: Executor): Watcher
 
     /**
@@ -43,7 +44,6 @@ interface Watchable<out S> {
      * @return a [Watcher]
      */
     @JsName("watchWithMode")
-    @JvmSynthetic
     fun watch(callback: (state: S) -> Unit, mode: WatchMode): Watcher
 
     /**
@@ -51,6 +51,5 @@ interface Watchable<out S> {
      *
      * @return a [Watcher]
      */
-    @JvmSynthetic
     fun watch(callback: (state: S) -> Unit): Watcher
 }

@@ -3,7 +3,6 @@ import koncurrent.MockExecutor
 import koncurrent.Promise
 import koncurrent.setTimeout
 import cinematic.WatchMode
-import cinematic.liveOf
 import cinematic.mutableLiveOf
 import kotlin.test.Test
 
@@ -38,7 +37,7 @@ class InteroperabilityTest {
 
     @Test
     fun should_be_able_to_watch_a_live_eagerly() {
-        val pLive = liveOf(1234)
+        val pLive = mutableLiveOf(1234)
         globalThis.live = pLive
         val live = globalThis.live
         var number: Int = 0
@@ -51,7 +50,7 @@ class InteroperabilityTest {
 
     @Test
     fun should_be_able_to_watch_without_passing_watch_mode() {
-        val pLive = liveOf(1234)
+        val pLive = mutableLiveOf(1234)
         globalThis.live = pLive
         val live = globalThis.live
         var number: Int = 0

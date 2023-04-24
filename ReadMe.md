@@ -2,7 +2,7 @@
 
 A kotlin Multiplatform library suite that handles watching changing ui states in general
 
-![Maven](https://img.shields.io/maven-central/v/tz.co.asoft/cinematic/unspecified?style=for-the-badge)
+![Maven](https://img.shields.io/maven-central/v/tz.co.asoft/cinematic/2.0.16?style=for-the-badge)
 ![Kotlin](https://img.shields.io/badge/kotlin-multiplatform-blue?style=for-the-badge&logo=kotlin&logoColor=white)
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=&logoColor=white)
@@ -15,7 +15,7 @@ A kotlin Multiplatform library suite that handles watching changing ui states in
 
 ```kotlin
 dependencies {
-    implementation("tz.co.asoft:cinematic-live-core:unspecified")
+    implementation("tz.co.asoft:cinematic-live-core:2.0.16")
 }
 ```
 

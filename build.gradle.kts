@@ -46,11 +46,11 @@ subprojects {
             name.set(p.name)
             description.set(p.description)
             inceptionYear.set("2019")
-            url.set("https://github.com/aSoft-Ltd/functions")
+            url.set("https://github.com/aSoft-Ltd/cinematic")
             licenses {
                 license {
                     name.set("MIT License")
-                    url.set("https://github.com/aSoft-Ltd/functions/blob/master/LICENSE")
+                    url.set("https://github.com/aSoft-Ltd/cinematic/blob/master/LICENSE")
                 }
             }
             developers {
@@ -61,9 +61,9 @@ subprojects {
                 }
             }
             scm {
-                url.set("https://github.com/aSoft-Ltd/functions/")
-                connection.set("scm:git:git://github.com/aSoft-Ltd/functions.git")
-                developerConnection.set("scm:git:ssh://git@github.com/aSoft-Ltd/functions.git")
+                url.set("https://github.com/aSoft-Ltd/cinematic/")
+                connection.set("scm:git:git://github.com/aSoft-Ltd/cinematic.git")
+                developerConnection.set("scm:git:ssh://git@github.com/aSoft-Ltd/cinematic.git")
             }
         }
     }

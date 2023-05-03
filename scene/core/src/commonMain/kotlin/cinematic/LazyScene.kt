@@ -9,7 +9,7 @@ import kase.Success
 import kotlin.js.JsExport
 import kotlin.js.JsName
 
-abstract class LazyScene<S>(state: LazyState<S>) : Scene<LazyState<S>>(state) {
+abstract class LazyScene<out S>(state: LazyState<S>) : Scene<LazyState<S>>(state) {
     @JsName("asPending")
     constructor() : this(Pending)
 

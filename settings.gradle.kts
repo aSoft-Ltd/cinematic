@@ -42,11 +42,6 @@ includeSubs("koncurrent-executors", "../koncurrent/executors", "core", "coroutin
 includeSubs("koncurrent-later", "../koncurrent/later", "core", "coroutines", "test")
 includeSubs("kevlar", "../kevlar", "core")
 includeSubs("kase", "../kase", "core")
-includeSubs("keep", "../keep", "api", "file", "mock", "test")
-includeSubs("lexi", "../lexi", "api", "console")
-includeSubs("lexi-test", "../lexi/test", "android")
-
-includeSubs("krest", "../krest", "core")
 
 // submodules
 includeSubs("cinematic-live", "live", "core", "coroutines", "compose", "react", "test", "kollections")

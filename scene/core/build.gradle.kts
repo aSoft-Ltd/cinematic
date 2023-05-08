@@ -27,17 +27,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(projects.cinematicLiveCore)
-                api(kotlinx.serialization.json)
-                api(projects.keepApi)
-                api(projects.keepMock)
-                api(projects.lexiConsole)
-                api(projects.krestCore)
                 api(projects.kaseCore)
-            }
-        }
-        val commonTest by getting {
-            dependencies {
-                implementation(projects.kommanderCoroutines)
             }
         }
 
@@ -46,7 +36,6 @@ kotlin {
                 api(androidx.lifecycle.viewmodel.ktx)
             }
         }
-
 
         val nonAndroidMain by creating {
             dependsOn(commonMain)

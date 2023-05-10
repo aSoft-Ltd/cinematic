@@ -5,7 +5,7 @@ import cinematic.Watchable
 import cinematic.WatchMode
 import cinematic.Watcher
 
-internal abstract class AbstractWatchable<out S>() : Watchable<S> {
+internal abstract class AbstractWatchable<out S> : Watchable<S> {
 
     protected abstract fun watchRaw(callback: ((state: S) -> Unit)?, mode: WatchMode?, executor: Executor?): Watcher
 

@@ -9,7 +9,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import cinematic.MutableLive;
 import cinematic.WatchMode;
 
-import static cinematic.MutableLiveFactory.create;
 import static kommander.ExpectBuilders.*;
 
 public class JavaSyntaxTest {

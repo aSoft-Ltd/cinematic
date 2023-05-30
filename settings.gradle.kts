@@ -35,7 +35,7 @@ rootProject.name = "cinematic"
 includeBuild("../able")
 
 // dependencies
-includeSubs("functions", "../functions", "core")
+// includeSubs("functions", "../functions", "core")
 includeSubs("kommander", "../kommander", "core", "coroutines")
 includeSubs("kollections", "../kollections", "atomic", "interoperable")
 includeSubs("koncurrent-executors", "../koncurrent/executors", "core", "coroutines", "mock")

@@ -6,7 +6,7 @@ plugins {
 description = "An multiplatform representation of a Live<T> object"
 
 kotlin {
-    if (Targeting.JVM) jvm { library(); withJava() }
+    if (Targeting.JVM) jvm { withJava(); library() }
     if (Targeting.JS) js(IR) { library() }
 //    if (Targeting.WASM) wasm { library() }
     val osxTargets = if (Targeting.OSX) osxTargets() else listOf()

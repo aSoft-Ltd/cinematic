@@ -48,9 +48,6 @@ kotlin {
             dependencies {
                 implementation(compose.desktop.currentOs)
                 implementation(compose.uiTestJUnit4)
-                implementation("com.google.truth:truth:1.1.5") {
-                    because("The backed in version 1.0.1 takes ages to resolve for some reasons")
-                }
             }
         }
     }

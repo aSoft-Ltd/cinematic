@@ -16,13 +16,14 @@ class TestWatchingValues {
     val rule = createComposeRule()
 
     @Test
-    fun should_watch_with_compose() {
-        rule.setContent { Counter(live, onIncrement = { live.value += 1 }) }
+    fun should_watch_as_state_in_a_composable_function() = with(rule){
+        setContent { Counter(live, onIncrement = { live.value += 1 }) }
 
-        rule.onNodeWithText("Counter: 0").performClick()
-        rule.onNodeWithText("Counter: 1").assertExists()
-        rule.onNodeWithText("Counter: 1").performClick()
-        rule.onNodeWithText("Counter: 2").assertExists()
+        onNodeWithText("Counter: 0").performClick()
+        onNodeWithText("Counter: 1").assertExists()
+        onNodeWithText("Counter: 1").performClick()
+        onNodeWithText("Counter: 2").assertExists()
+        Unit
     }
 
     @Composable

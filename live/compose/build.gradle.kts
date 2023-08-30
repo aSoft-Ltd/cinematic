@@ -1,7 +1,4 @@
 import org.jetbrains.compose.ExperimentalComposeLibrary
-import org.jetbrains.compose.compose
-import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
-import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
 
 plugins {
     id("org.jetbrains.compose")
@@ -12,15 +9,7 @@ plugins {
 description = "Bindings for Live<S> object to be used with compose"
 
 kotlin {
-    if (Targeting.JVM) jvm {
-        val version = "1.8"
-        compilations.all {
-            compileJavaTaskProvider?.configure { targetJvm(version) }
-            kotlinOptions {
-                jvmTarget = version
-            }
-        }
-    }
+    if (Targeting.JVM) jvm { library(jupiter = false) }
     if (Targeting.JS) js(IR) { library() }
 //    if (Targeting.WASM) wasm { library() }
 

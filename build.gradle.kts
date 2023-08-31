@@ -16,10 +16,7 @@ repositories {
     publicRepos()
 }
 
-val v = asoft.versions.root.get()
-
-group = "tz.co.asoft"
-version = v
+val v = libs.versions.asoft.get()
 
 tasks.dokkaHtmlMultiModule {
     moduleName.set("Cinematic")
@@ -28,12 +25,16 @@ tasks.dokkaHtmlMultiModule {
     includes.from("ReadMe.md")
 }
 
+allprojects {
+    group = "tz.co.asoft"
+    version = v
+}
+
 subprojects {
     apply(plugin = "org.jetbrains.dokka")
     apply(plugin = "com.vanniktech.maven.publish")
 
     val p = this
-    version = v
 
     configure<MavenPublishBaseExtension> {
         publishToMavenCentral(SonatypeHost.DEFAULT,automaticRelease = true)

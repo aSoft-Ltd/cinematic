@@ -17,7 +17,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(libs.kommander.core)
-                api(projects.cinematicLiveCore)
+                api(libs.cinematic.live.core)
             }
         }
 

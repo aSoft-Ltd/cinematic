@@ -18,7 +18,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(libs.koncurrent.executors.coroutines)
-                api(projects.cinematicLiveCore)
+                api(libs.cinematic.live.core)
                 api(kotlinx.coroutines.core)
             }
         }

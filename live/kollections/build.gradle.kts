@@ -18,14 +18,14 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(projects.cinematicLiveCore)
+                api(libs.cinematic.live.core)
                 api(libs.kollections.interoperable)
             }
         }
 
         val commonTest by getting {
             dependencies {
-                api(projects.cinematicLiveTest)
+                api(libs.cinematic.live.test)
             }
         }
     }

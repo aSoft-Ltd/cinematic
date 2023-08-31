@@ -1,26 +1,9 @@
 pluginManagement {
-    enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-
-    repositories {
-        google()
-        gradlePluginPortal()
-        mavenCentral()
-    }
-
-    dependencyResolutionManagement {
-        versionCatalogs {
-            file("../versions/gradle/versions").listFiles().map {
-                it.nameWithoutExtension to it.absolutePath
-            }.forEach { (name, path) ->
-                create(name) { from(files(path)) }
-            }
-        }
-    }
+    includeBuild("../build-logic")
 }
 
-fun includeRoot(name: String, path: String) {
-    include(":$name")
-    project(":$name").projectDir = File(path)
+plugins {
+    id("multimodule")
 }
 
 fun includeSubs(base: String, path: String = base, vararg subs: String) {
@@ -30,18 +13,10 @@ fun includeSubs(base: String, path: String = base, vararg subs: String) {
     }
 }
 
+
+includeBuild("../koncurrent")
+
 rootProject.name = "cinematic"
-
-includeBuild("../able")
-
-// dependencies
-// includeSubs("functions", "../functions", "core")
-includeSubs("kommander", "../kommander", "core", "coroutines")
-includeSubs("kollections", "../kollections", "atomic", "interoperable")
-includeSubs("koncurrent-executors", "../koncurrent/executors", "core", "coroutines", "mock")
-includeSubs("koncurrent-later", "../koncurrent/later", "core", "coroutines", "test")
-includeSubs("kevlar", "../kevlar", "core")
-includeSubs("kase", "../kase", "core")
 
 // submodules
 includeSubs("cinematic-live", "live", "core", "coroutines", "compose", "react", "test", "kollections")

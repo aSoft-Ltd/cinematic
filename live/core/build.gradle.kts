@@ -19,14 +19,14 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(projects.koncurrentExecutorsCore)
+                api(libs.koncurrent.executors.core)
             }
         }
 
         val commonTest by getting {
             dependencies {
                 implementation(libs.kommander.coroutines)
-                implementation(projects.koncurrentExecutorsMock)
+                implementation(libs.koncurrent.executors.mock)
             }
         }
 

@@ -27,7 +27,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(projects.cinematicLiveCore)
-                api(projects.kaseCore)
+                api(libs.kase.core)
             }
         }
 

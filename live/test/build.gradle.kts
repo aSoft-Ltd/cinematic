@@ -16,14 +16,14 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(projects.kommanderCore)
+                implementation(libs.kommander.core)
                 api(projects.cinematicLiveCore)
             }
         }
 
         val commonTest by getting {
             dependencies {
-                implementation(projects.kommanderCoroutines)
+                implementation(libs.kommander.coroutines)
             }
         }
     }

@@ -7,6 +7,7 @@ plugins {
 description = "A multiplatfrom library for authoring Scenes (viewmodel) in an MVIVM architecture"
 
 configureAndroid("src/androidMain") {
+    namespace = "tz.co.asoft.cinematic.scene.core"
     defaultConfig {
         minSdk = 14
     }

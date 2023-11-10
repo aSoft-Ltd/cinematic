@@ -1,15 +1,11 @@
-@file:JsExport
-@file:Suppress("WRONG_EXPORTED_DECLARATION")
+package cinematic.internal
 
-package cinematic
-
-import kotlin.js.JsExport
 import kotlin.jvm.JvmField
 
 /**
  * A Mode on which one can watch a [Live] object
  */
-enum class WatchMode {
+internal enum class WatchMode {
     /**
      * A mode of watching a live object without skipping even a single value
      */
@@ -18,10 +14,10 @@ enum class WatchMode {
     /**
      * A mode of watching a live object skipping the current value that is already available in the live object
      */
-    Casually;
+    Lazily;
 
     companion object {
         @JvmField
-        val Default: WatchMode = Casually
+        val Default: WatchMode = Lazily
     }
 }

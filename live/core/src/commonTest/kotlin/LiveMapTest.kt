@@ -13,14 +13,14 @@ class LiveMapTest {
         val liveInt = mutableLiveOf(1)
         val liveString = liveInt.map { "String: $it" }
         val values = mutableMapOf<Int, String>()
-        val watcher1 = liveString.watch {
+        val watcher1 = liveString.watchLazily {
             values[W1] = it
         }
         liveInt.value = 2
         expect(values[W1]).toBe("String: 2")
         liveInt.value = 3
         expect(values[W1]).toBe("String: 3")
-        val watcher2 = liveString.watch {
+        val watcher2 = liveString.watchLazily {
             values[W2] = it
         }
         liveInt.value = 4
@@ -52,8 +52,8 @@ class LiveMapTest {
     fun should_actually_map_from_one_value_to_the_second_value() {
         val live = mutableLiveOf(1)
         val livePlus = live.map { it + 1 }
-        val watcher1 = live.watch { println("Live: $it") }
-        val watcher2 = livePlus.watch { println("Plus: $it") }
+        val watcher1 = live.watchLazily { println("Live: $it") }
+        val watcher2 = livePlus.watchLazily { println("Plus: $it") }
         live.value = 2
         expect(livePlus.value).toBe(3)
         live.value = 4

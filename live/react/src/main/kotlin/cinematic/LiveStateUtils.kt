@@ -12,8 +12,11 @@ fun <S> useNullableLive(live: Live<S>?, executor: Executor? = null): S? {
     var state by useState(live?.value)
     useEffect(live, executor) {
         val e = executor ?: SynchronousExecutor
-        val mode = if (state == null) WatchMode.Eagerly else WatchMode.Casually
-        val watcher = live?.watch(mode = mode, e) { state = it }
+        val watcher = if (state == null) live?.watchEagerly(e) {
+            state = it
+        } else live?.watchLazily(e) {
+            state = it
+        }
         cleanup { watcher?.stop() }
     }
     return state
@@ -24,7 +27,7 @@ fun <S> useLive(live: Live<S>, executor: Executor? = null): S {
     var state by useState(live.value)
     useEffect(live, executor) {
         val e = executor ?: SynchronousExecutor
-        val watcher = live.watch(mode = WatchMode.Casually, e) { state = it }
+        val watcher = live.watchLazily(e) { state = it }
         cleanup { watcher.stop() }
     }
     return state

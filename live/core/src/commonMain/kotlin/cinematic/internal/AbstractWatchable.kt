@@ -2,18 +2,12 @@ package cinematic.internal
 
 import koncurrent.Executor
 import cinematic.Watchable
-import cinematic.WatchMode
 import cinematic.Watcher
 
 internal abstract class AbstractWatchable<out S> : Watchable<S> {
-
-    protected abstract fun watchRaw(callback: ((state: S) -> Unit)?, mode: WatchMode?, executor: Executor?): Watcher
-
-    override fun watch(callback: (state: S) -> Unit, mode: WatchMode, executor: Executor): Watcher = watchRaw(callback, mode, executor)
-
-    override fun watch(callback: (state: S) -> Unit, mode: WatchMode): Watcher = watchRaw(callback, mode, null)
-
-    override fun watch(callback: (state: S) -> Unit): Watcher = watchRaw(callback, null, null)
-
-    override fun watch(callback: (state: S) -> Unit, executor: Executor) = watchRaw(callback, null, executor)
+    protected abstract fun watchRaw(executor: Executor?, mode: WatchMode?, callback: ((state: S) -> Unit)?): Watcher
+    override fun watchLazily(executor: Executor, callback: (state: S) -> Unit) = watchRaw(executor, WatchMode.Lazily, callback)
+    override fun watchEagerly(executor: Executor, callback: (state: S) -> Unit) = watchRaw(executor, WatchMode.Lazily, callback)
+    override fun watchLazily(callback: (state: S) -> Unit) = watchRaw(null, WatchMode.Lazily, callback)
+    override fun watchEagerly(callback: (state: S) -> Unit) = watchRaw(null, WatchMode.Eagerly, callback)
 }

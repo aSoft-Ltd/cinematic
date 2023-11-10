@@ -7,7 +7,6 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import cinematic.MutableLive;
-import cinematic.WatchMode;
 
 import static kommander.ExpectBuilders.*;
 

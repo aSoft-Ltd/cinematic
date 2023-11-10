@@ -7,7 +7,7 @@ class LiveMapTest {
     fun should_have_a_valid_syntax() {
         val live = mutableLiveMapOf<Int, String>()
         val values = mutableMapOf<Int, String>()
-        val watcher = live.watch {
+        val watcher = live.watchLazily {
             println("Changed to $it")
             values.putAll(it)
         }

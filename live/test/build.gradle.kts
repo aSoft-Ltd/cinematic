@@ -16,7 +16,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(libs.kommander.core)
+                api(libs.kommander.core)
                 api(libs.cinematic.live.core)
             }
         }

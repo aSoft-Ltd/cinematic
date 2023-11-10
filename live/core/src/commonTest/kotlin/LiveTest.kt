@@ -5,12 +5,12 @@ class LiveTest {
     @Test
     fun should_have_a_valid_syntax() {
         val liveInt = mutableLiveOf(1)
-        val watcher1 = liveInt.watch {
+        val watcher1 = liveInt.watchLazily {
             println("Watcher 1: $it")
         }
         liveInt.value = 2
         liveInt.value = 3
-        val watcher2 = liveInt.watch {
+        val watcher2 = liveInt.watchLazily {
             println("Watcher 2: $it")
         }
         liveInt.value = 4

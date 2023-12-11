@@ -4,6 +4,6 @@ package cinematic
 
 import kollections.CollectionLike
 import kollections.List
-import kotlin.js.JsExport
+import kotlinx.JsExport
 
 interface LiveList<out E> : CollectionLike<E>, Live<List<E>>

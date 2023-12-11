@@ -4,7 +4,8 @@
 package cinematic
 
 import koncurrent.Executor
-import kotlin.js.JsExport
+import kotlinx.JsExport
+import kotlinx.JsExportIgnore
 
 /**
  * A wrapper around a [value] that can be watched as it changes
@@ -18,7 +19,7 @@ interface Watchable<out S> {
      *
      * @return a [Watcher]
      */
-    @JsExport.Ignore
+    @JsExportIgnore
     fun watchEagerly(executor: Executor, callback: (state: S) -> Unit): Watcher
 
     /**
@@ -26,7 +27,7 @@ interface Watchable<out S> {
      *
      * @return a [Watcher]
      */
-    @JsExport.Ignore
+    @JsExportIgnore
     fun watchLazily(executor: Executor, callback: (state: S) -> Unit): Watcher
 
     /**

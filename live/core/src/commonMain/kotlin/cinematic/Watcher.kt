@@ -2,7 +2,7 @@
 
 package cinematic
 
-import kotlin.js.JsExport
+import kotlinx.JsExport
 
 interface Watcher {
     fun stop()

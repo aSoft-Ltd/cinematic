@@ -8,14 +8,15 @@ import kase.LazyState
 import kase.Pending
 import kase.Success
 import kotlin.js.ExperimentalJsExport
-import kotlin.js.JsExport
+import kotlinx.JsExport
+import kotlinx.JsExportIgnore
 import kotlin.js.JsName
 
 abstract class LazyScene<out S>(state: LazyState<S>) : Scene<LazyState<S>>(state) {
-    @JsExport.Ignore
+    @JsExportIgnore
     constructor() : this(Pending)
 
-    @JsExport.Ignore
+    @JsExportIgnore
     constructor(state: S) : this(Success(state))
 
     open fun deInitialize() {

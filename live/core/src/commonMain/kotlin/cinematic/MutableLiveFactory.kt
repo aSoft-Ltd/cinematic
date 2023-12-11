@@ -7,7 +7,7 @@ package cinematic
 import cinematic.internal.DEFAULT_HISTORY_CAPACITY
 import cinematic.internal.MutableLiveImpl
 import cinematic.internal.SingleWatchableLiveImpl
-import kotlin.js.JsExport
+import kotlinx.JsExport
 import kotlin.jvm.JvmName
 import kotlin.jvm.JvmOverloads
 

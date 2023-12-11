@@ -3,7 +3,7 @@
 
 package cinematic
 
-import kotlin.js.JsExport
+import kotlinx.JsExport
 
 abstract class Scene<out S>(state: S) : BaseScene() {
 

@@ -2,7 +2,7 @@
 
 package cinematic
 
-import kotlin.js.JsExport
+import kotlinx.JsExport
 
 actual abstract class BaseScene {
     protected actual open fun onCleared() {}

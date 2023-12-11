@@ -11,7 +11,7 @@ import kollections.toISet
 import cinematic.internal.MutableLiveListWrapper
 import cinematic.internal.MutableLiveMapWrapper
 import cinematic.internal.MutableLiveSetWrapper
-import kotlin.js.JsExport
+import kotlinx.JsExport
 import kotlin.js.JsName
 
 // ----------------------------------- MutableLiveList constructors ----------------------------------

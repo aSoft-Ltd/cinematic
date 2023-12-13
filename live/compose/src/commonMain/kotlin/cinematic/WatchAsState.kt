@@ -16,7 +16,7 @@ inline fun <S> Live<S>.watchAsState(): S = rememberLive(this)
 fun <S> rememberLive(live: Live<S>): S {
     var state by remember(live) { mutableStateOf(live.value) }
     DisposableEffect(live) {
-        val watcher = live.watch(WatchMode.Lazily) { state = it }
+        val watcher = live.watchLazily { state = it }
         onDispose { watcher.stop() }
     }
     return state

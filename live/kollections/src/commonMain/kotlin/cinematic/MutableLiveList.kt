@@ -4,10 +4,9 @@
 package cinematic
 
 import kollections.List
-import kollections.MutableCollectionLike
 import kollections.MutableList
 import kotlinx.JsExport
 
-interface MutableLiveList<E> : MutableCollectionLike<E>, MutableLive<List<E>>, LiveList<E> {
+interface MutableLiveList<E> : MutableLiveCollection<E>, MutableLive<List<E>>, LiveList<E> {
     fun <R> update(block: (MutableList<E>) -> R): R
 }

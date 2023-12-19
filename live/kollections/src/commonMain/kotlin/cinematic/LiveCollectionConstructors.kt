@@ -3,36 +3,36 @@
 
 package cinematic
 
-import kollections.MapEntry
-import kollections.iListOf
-import kollections.iMapOf
-import kollections.iSetOf
-import kollections.toISet
 import cinematic.internal.MutableLiveListWrapper
 import cinematic.internal.MutableLiveMapWrapper
 import cinematic.internal.MutableLiveSetWrapper
+import kollections.Collection
+import kollections.listOf
+import kollections.mapOf
+import kollections.setOf
+import kollections.toSet
 import kotlinx.JsExport
 import kotlin.js.JsName
 
 // ----------------------------------- MutableLiveList constructors ----------------------------------
 @JsName("emptyMutableLiveListOF")
-fun <E> mutableLiveListOf(): MutableLiveList<E> = MutableLiveListWrapper(mutableLiveOf(iListOf()))
+fun <E> mutableLiveListOf(): MutableLiveList<E> = MutableLiveListWrapper(mutableLiveOf(listOf()))
 
-fun <E> mutableLiveListOf(vararg elements: E): MutableLiveList<E> = MutableLiveListWrapper(mutableLiveOf(iListOf(*elements)))
+fun <E> mutableLiveListOf(vararg elements: E): MutableLiveList<E> = MutableLiveListWrapper(mutableLiveOf(listOf(*elements)))
 
 
 // ----------------------------------- MutableLiveSet constructors ----------------------------------
 @JsName("emptyMutableLiveSetOf")
-fun <E> mutableLiveSetOf(): MutableLiveSet<E> = MutableLiveSetWrapper(mutableLiveOf(iSetOf()))
+fun <E> mutableLiveSetOf(): MutableLiveSet<E> = MutableLiveSetWrapper(mutableLiveOf(setOf()))
 
 @JsName("_ignore_mutableLiveSetOf")
-fun <E> mutableLiveSetOf(col: Collection<E>): MutableLiveSet<E> = MutableLiveSetWrapper(mutableLiveOf(col.toISet()))
+fun <E> mutableLiveSetOf(col: Collection<E>): MutableLiveSet<E> = MutableLiveSetWrapper(mutableLiveOf(col.toSet()))
 
-fun <E> mutableLiveSetOf(vararg elements: E): MutableLiveSet<E> = MutableLiveSetWrapper(mutableLiveOf(iSetOf(*elements)))
+fun <E> mutableLiveSetOf(vararg elements: E): MutableLiveSet<E> = MutableLiveSetWrapper(mutableLiveOf(setOf(*elements)))
 
 
 // ----------------------------------- MutableLiveMap constructors ----------------------------------
 @JsName("emptyMutableLiveMapOf")
-fun <K, V> mutableLiveMapOf(): MutableLiveMap<K, V> = MutableLiveMapWrapper(mutableLiveOf(iMapOf()))
+fun <K, V> mutableLiveMapOf(): MutableLiveMap<K, V> = MutableLiveMapWrapper(mutableLiveOf(mapOf()))
 
-fun <K, V> mutableLiveMapOf(pairs: MapEntry<K, V>): MutableLiveMap<K, V> = MutableLiveMapWrapper(mutableLiveOf(iMapOf(pairs)))
+fun <K, V> mutableLiveMapOf(vararg pairs: Pair<K, V>): MutableLiveMap<K, V> = MutableLiveMapWrapper(mutableLiveOf(mapOf(*pairs)))

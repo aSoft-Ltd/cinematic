@@ -4,9 +4,21 @@
 package cinematic
 
 import kollections.MutableMap
-import kollections.MutableMapLike
+import kollections.Map
 import kotlinx.JsExport
 
-interface MutableLiveMap<K, V> : MutableMapLike<K, V>, LiveMap<K, V> {
+interface MutableLiveMap<K, V> : MutableLive<Map<K, V>>, LiveMap<K, V> {
+
+    fun clear()
+
+    fun remove(key: K): V?
+
+    fun put(key: K, value: V): V?
+
+    fun putAll(from: Map<K, V>)
+
+    fun set(key: K, value: V) {
+        put(key, value)
+    }
     fun <R> update(block: (MutableMap<K, V>) -> R): R
 }

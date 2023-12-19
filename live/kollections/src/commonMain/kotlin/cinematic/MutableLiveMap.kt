@@ -17,8 +17,6 @@ interface MutableLiveMap<K, V> : MutableLive<Map<K, V>>, LiveMap<K, V> {
 
     fun putAll(from: Map<K, V>)
 
-    fun set(key: K, value: V) {
-        put(key, value)
-    }
+    operator fun set(key: K, value: V)
     fun <R> update(block: (MutableMap<K, V>) -> R): R
 }

@@ -1,8 +1,8 @@
 import org.jetbrains.compose.ExperimentalComposeLibrary
 
 plugins {
-    id("org.jetbrains.compose")
     kotlin("multiplatform")
+    id("org.jetbrains.compose")
     id("tz.co.asoft.library")
 }
 
@@ -11,7 +11,7 @@ description = "Bindings for Live<S> object to be used with compose"
 kotlin {
     if (Targeting.JVM) jvm { library(jupiter = false) }
     if (Targeting.JS) js(IR) { library() }
-//    if (Targeting.WASM) wasm { library() }
+//    if (Targeting.WASM) wasmJs { library() }
 
     val osxTargets = if (Targeting.OSX) osxTargets() else listOf()
 //    val ndkTargets = if (Targeting.NDK) ndkTargets() else listOf()
@@ -21,7 +21,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(libs.cinematic.live.core)
+                api(projects.cinematicLiveCore)
                 api(compose.runtime)
             }
         }

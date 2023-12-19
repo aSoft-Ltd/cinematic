@@ -1,1 +1,0 @@
-external val globalThis: dynamic

@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
+import org.jetbrains.kotlin.gradle.targets.js.npm.tasks.KotlinNpmInstallTask
+
 plugins {
     kotlin("multiplatform")
     id("tz.co.asoft.library")
@@ -8,7 +11,8 @@ description = "Tools for testing Live<S> objects"
 kotlin {
     if (Targeting.JVM) jvm { library() }
     if (Targeting.JS) js(IR) { library() }
-//    if (Targeting.WASM) wasm { library() }
+    if (Targeting.WASM) wasmJs { library() }
+    if (Targeting.WASM) wasmWasi { library() }
     val osxTargets = if (Targeting.OSX) osxTargets() else listOf()
 //    val ndkTargets = if (Targeting.NDK) ndkTargets() else listOf()
     val linuxTargets = if (Targeting.LINUX) linuxTargets() else listOf()
@@ -16,15 +20,29 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                api(projects.cinematicLiveCore)
                 api(libs.kommander.core)
-                api(libs.cinematic.live.core)
             }
         }
 
         val commonTest by getting {
             dependencies {
-                implementation(libs.kommander.coroutines)
+                implementation(libs.kommander.core)
             }
         }
     }
+}
+
+rootProject.the<NodeJsRootExtension>().apply {
+    version = npm.versions.node.version.get()
+    downloadBaseUrl = npm.versions.node.url.get()
+}
+
+rootProject.tasks.withType<KotlinNpmInstallTask>().configureEach {
+    args.add("--ignore-engines")
+}
+
+tasks.named("wasmJsTestTestDevelopmentExecutableCompileSync").configure {
+    mustRunAfter(tasks.named("jsBrowserTest"))
+    mustRunAfter(tasks.named("jsNodeTest"))
 }

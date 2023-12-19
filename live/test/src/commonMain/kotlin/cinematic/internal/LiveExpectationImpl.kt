@@ -69,7 +69,7 @@ internal class LiveExpectationImpl<out S>(
         }
     }
 
-    override fun toHaveGoneThrough(vararg states: @UnsafeVariance S): List<S> {
+    override fun toHavePassedThrough(vararg states: @UnsafeVariance S): List<S> {
         assertEquals(
             states.toList().toString(), value.toString(),
             expectActualMessageForInstances(states.toList(), value)

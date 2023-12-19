@@ -10,7 +10,7 @@ kotlin {
     sourceSets {
         val main by getting {
             dependencies {
-                api(libs.cinematic.live.core)
+                api(projects.cinematicLiveCore)
                 api(project.dependencies.platform(kotlinw.bom))
                 api(kotlinw.react.core)
             }

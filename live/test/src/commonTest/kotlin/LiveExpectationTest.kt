@@ -1,5 +1,4 @@
 import cinematic.*
-import kotlin.test.Ignore
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -17,7 +16,7 @@ class LiveExpectationTest {
         l.value = 11
         l.value = 12
         l.value = 13
-        val (i1) = expect(l).toHaveGoneThrough(11, 12, 13)
+        val (i1) = expect(l).toHavePassedThrough(11, 12, 13)
         assertEquals(11, i1)
     }
 

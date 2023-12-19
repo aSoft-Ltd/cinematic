@@ -19,15 +19,21 @@ internal class MutableLiveListWrapper<E>(
 ) : MutableLiveList<E>, MutableLive<List<E>> by live {
 
 
-    override fun add(element: E) = update { it.add(element) }
+    override fun add(element: E) {
+        update { it.add(element) }
+    }
 
     override fun remove(element: E) {
         update { it.remove(element) }
     }
 
-    override fun removeAll(elements: Collection<E>) = update { it.removeAll(elements) }
+    override fun removeAll(elements: Collection<E>) {
+        update { it.removeAll(elements) }
+    }
 
-    override fun addAll(elements: Collection<E>) = update { it.addAll(elements) }
+    override fun addAll(elements: Collection<E>) {
+        update { it.addAll(elements) }
+    }
 
     override fun clear() {
         live.value = emptyList()

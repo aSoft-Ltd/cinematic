@@ -7,10 +7,9 @@ package cinematic
 import kase.LazyState
 import kase.Pending
 import kase.Success
-import kotlin.js.ExperimentalJsExport
 import kotlinx.JsExport
 import kotlinx.JsExportIgnore
-import kotlin.js.JsName
+import kotlin.js.ExperimentalJsExport
 
 abstract class LazyScene<out S>(state: LazyState<S>) : Scene<LazyState<S>>(state) {
     @JsExportIgnore

@@ -38,4 +38,6 @@ interface Live<out S> : Watchable<S> {
      * Stops all [Watcher]s from watching this [Live] [value]
      */
     fun stopAll()
+
+    fun dispatch()
 }

@@ -27,6 +27,4 @@ interface MutableLive<S> : Live<S> {
      */
     @JsName("dispatchValue")
     fun dispatch(value: S)
-
-    fun dispatch()
 }

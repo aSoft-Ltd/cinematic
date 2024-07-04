@@ -6,6 +6,7 @@ plugins {
     kotlin("multiplatform")
     id("org.jetbrains.compose")
     id("tz.co.asoft.library")
+    kotlin("plugin.compose")
 }
 
 description = "Bindings for Live<S> object to be used with compose"
@@ -44,12 +45,12 @@ kotlin {
     }
 }
 
-compose {
-    kotlinCompilerPlugin.set(kotlinz.versions.compose.compiler)
-    kotlinCompilerPluginArgs.add(kotlinz.versions.kotlin.map {
-        "suppressKotlinVersionCompatibilityCheck=$it"
-    })
-}
+//compose {
+//    kotlinCompilerPlugin.set(kotlinz.versions.compose.compiler)
+//    kotlinCompilerPluginArgs.add(kotlinz.versions.kotlin.map {
+//        "suppressKotlinVersionCompatibilityCheck=$it"
+//    })
+//}
 
 rootProject.the<NodeJsRootExtension>().apply {
     version = npm.versions.node.version.get()

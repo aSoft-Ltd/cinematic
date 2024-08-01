@@ -5,19 +5,20 @@ package cinematic
 import koncurrent.Executor
 import koncurrent.SynchronousExecutor
 import react.useEffect
+import react.useEffectWithCleanup
 import react.useState
 
 @JsExport
 fun <S> useNullableLive(live: Live<S>?, executor: Executor? = null): S? {
     var state by useState(live?.value)
-    useEffect(live, executor) {
+    useEffectWithCleanup (live, executor) {
         val e = executor ?: SynchronousExecutor
         val watcher = if (state == null) live?.watchEagerly(e) {
             state = it
         } else live?.watchLazily(e) {
             state = it
         }
-        cleanup { watcher?.stop() }
+        onCleanup { watcher?.stop() }
     }
     return state
 }
@@ -25,10 +26,10 @@ fun <S> useNullableLive(live: Live<S>?, executor: Executor? = null): S? {
 @JsExport
 fun <S> useLive(live: Live<S>, executor: Executor? = null): S {
     var state by useState(live.value)
-    useEffect(live, executor) {
+    useEffectWithCleanup(live, executor) {
         val e = executor ?: SynchronousExecutor
         val watcher = live.watchLazily(e) { state = it }
-        cleanup { watcher.stop() }
+        onCleanup { watcher.stop() }
     }
     return state
 }

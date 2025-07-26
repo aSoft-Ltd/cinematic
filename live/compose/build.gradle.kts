@@ -1,4 +1,5 @@
 import org.jetbrains.compose.ExperimentalComposeLibrary
+import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsEnvSpec
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
 import org.jetbrains.kotlin.gradle.targets.js.npm.tasks.KotlinNpmInstallTask
 
@@ -45,7 +46,7 @@ kotlin {
     }
 }
 
-rootProject.the<NodeJsRootExtension>().apply {
+rootProject.the<NodeJsEnvSpec>().apply {
     version = npm.versions.node.version.get()
     downloadBaseUrl = npm.versions.node.url.get()
 }

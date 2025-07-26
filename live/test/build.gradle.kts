@@ -30,6 +30,10 @@ kotlin {
                 implementation(libs.kommander.core)
             }
         }
+
+        if (Targeting.JVM) jvmTest.dependencies {
+            implementation(kotlin("test-junit5"))
+        }
     }
 }
 

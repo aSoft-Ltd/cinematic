@@ -34,6 +34,10 @@ kotlin {
             }
         }
 
+        if (Targeting.JVM) jvmTest.dependencies {
+            implementation(kotlin("test-junit5"))
+        }
+
         val nonJvmMain by creating {
             dependsOn(commonMain)
         }

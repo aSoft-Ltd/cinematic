@@ -17,20 +17,20 @@ kotlin {
     val osxTargets = if (Targeting.OSX) osxTargets() else listOf()
 //    val ndkTargets = if (Targeting.NDK) ndkTargets() else listOf()
     val linuxTargets = if (Targeting.LINUX) linuxTargets() else listOf()
-    val mingwTargets = if (Targeting.MINGW) mingwTargets() else listOf ()
+    val mingwTargets = if (Targeting.MINGW) mingwTargets() else listOf()
 
     sourceSets {
-        val commonMain by getting {
-            dependencies {
-                api(projects.cinematicLiveCore)
-                api(libs.kollections.interoperable)
-            }
+        commonMain.dependencies {
+            api(projects.cinematicLiveCore)
+            api(libs.kollections.interoperable)
         }
 
-        val commonTest by getting {
-            dependencies {
-                api(projects.cinematicLiveTest)
-            }
+        commonTest.dependencies {
+            api(projects.cinematicLiveTest)
+        }
+
+        jvmTest.dependencies {
+            implementation(kotlin("test-junit5"))
         }
     }
 }

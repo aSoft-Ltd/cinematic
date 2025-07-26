@@ -1,9 +1,5 @@
-import org.gradle.kotlin.dsl.get
-import org.gradle.kotlin.dsl.version
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
 import org.jetbrains.kotlin.gradle.targets.js.npm.tasks.KotlinNpmInstallTask
-import url
-import kotlin.apply
 
 plugins {
     kotlin("multiplatform")
@@ -22,18 +18,18 @@ kotlin {
     val mingwTargets = if (Targeting.MINGW) mingwTargets() else listOf()
 
     sourceSets {
-        val commonMain by getting {
-            dependencies {
-                api(projects.cinematicLiveCore)
-                api(libs.koncurrent.executors.coroutines)
-                api(kotlinx.coroutines.core)
-            }
+        commonMain.dependencies {
+            api(projects.cinematicLiveCore)
+            api(libs.koncurrent.executors.coroutines)
+            api(kotlinx.coroutines.core)
         }
 
-        val commonTest by getting {
-            dependencies {
-                implementation(libs.kommander.coroutines)
-            }
+        commonTest.dependencies {
+            implementation(libs.kommander.coroutines)
+        }
+
+        if (Targeting.JVM) jvmTest.dependencies {
+            implementation(kotlin("test-junit5"))
         }
     }
 }

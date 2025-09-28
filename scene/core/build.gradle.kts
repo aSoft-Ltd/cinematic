@@ -53,7 +53,7 @@ kotlin {
             dependsOn(nonAndroidMain)
         }
 
-        if (Targeting.JS) {
+        if (Targeting.JS) { // untill https://youtrack.jetbrains.com/issue/KT-80014 gets fixed
             val jsMain by getting {
                 dependsOn(nonAndroidMain)
             }

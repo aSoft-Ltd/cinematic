@@ -10,7 +10,7 @@ description = "Extensions for Live<S> object to be used with compose"
 
 kotlin {
     if (Targeting.JVM) jvm { library() }
-    if (Targeting.JS) js(IR) { library() } // untill https://youtrack.jetbrains.com/issue/KT-80014 gets fixed // untill https://youtrack.jetbrains.com/issue/KT-80014 gets fixed
+    if (Targeting.JS) js(IR) { library() } //
     if (Targeting.WASM) wasmJs { library() }
     if (Targeting.WASM) wasmWasi { library() }
     val osxTargets = if (Targeting.OSX) osxTargets() else listOf()

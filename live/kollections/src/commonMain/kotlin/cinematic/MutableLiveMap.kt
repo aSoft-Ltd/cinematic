@@ -3,8 +3,6 @@
 
 package cinematic
 
-import kollections.MutableMap
-import kollections.Map
 import kotlinx.JsExport
 
 interface MutableLiveMap<K, V> : MutableLive<Map<K, V>>, LiveMap<K, V> {

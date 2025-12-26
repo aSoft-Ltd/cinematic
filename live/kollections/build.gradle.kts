@@ -21,7 +21,6 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api(projects.cinematicLiveCore)
-            api(libs.kollections.interoperable)
         }
 
         commonTest.dependencies {

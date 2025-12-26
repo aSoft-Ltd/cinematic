@@ -6,11 +6,6 @@ package cinematic
 import cinematic.internal.MutableLiveListWrapper
 import cinematic.internal.MutableLiveMapWrapper
 import cinematic.internal.MutableLiveSetWrapper
-import kollections.Collection
-import kollections.listOf
-import kollections.mapOf
-import kollections.setOf
-import kollections.toSet
 import kotlinx.JsExport
 import kotlin.js.JsName
 

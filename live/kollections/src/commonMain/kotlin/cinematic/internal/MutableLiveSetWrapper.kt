@@ -1,17 +1,7 @@
 package cinematic.internal
 
-import kollections.MutableSet
-import kollections.Set
 import cinematic.MutableLive
 import cinematic.MutableLiveSet
-import kollections.Collection
-import kollections.add
-import kollections.addAll
-import kollections.emptySet
-import kollections.remove
-import kollections.removeAll
-import kollections.toMutableSet
-import kollections.toSet
 
 @PublishedApi
 internal class MutableLiveSetWrapper<E>(

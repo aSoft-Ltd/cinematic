@@ -2,20 +2,16 @@
 
 package cinematic
 
-import kollections.Collection
-import kollections.Map
-import kollections.Set
-import kollections.MapEntry
 import kotlinx.JsExport
 
 interface LiveMap<K, V> : Live<Map<K, V>> {
-    val size : Int
+    val size: Int
 
-    val keys : Set<K>
+    val keys: Set<K>
 
-    val values : Collection<V>
+    val values: Collection<V>
 
-    val entries : Set<MapEntry<K,V>>
+    val entries: Set<Map.Entry<K, V>>
 
     fun get(key: K): V?
 

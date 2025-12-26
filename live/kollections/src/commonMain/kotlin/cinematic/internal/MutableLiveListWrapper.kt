@@ -1,17 +1,7 @@
 package cinematic.internal
 
-import kollections.List
-import kollections.MutableList
-import kollections.Collection
 import cinematic.MutableLive
 import cinematic.MutableLiveList
-import kollections.add
-import kollections.addAll
-import kollections.emptyList
-import kollections.remove
-import kollections.removeAll
-import kollections.toList
-import kollections.toMutableList
 
 @PublishedApi
 internal class MutableLiveListWrapper<E>(

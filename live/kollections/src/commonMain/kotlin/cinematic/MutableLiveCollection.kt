@@ -2,7 +2,6 @@
 package cinematic
 
 import kotlinx.JsExport
-import kollections.Collection
 
 interface MutableLiveCollection<in E> {
     fun add(element: E)

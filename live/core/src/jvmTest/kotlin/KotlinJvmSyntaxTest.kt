@@ -1,18 +1,16 @@
 import kommander.expect
-import koncurrent.MockExecutor
 import cinematic.*
 import kotlin.test.Test
 
 class KotlinJvmSyntaxTest {
 
-    val executor = MockExecutor()
 
     @Test
     fun should_have_a_valid_syntax() {
         val liveInt = mutableLiveOf(1)
         val readableLive: Live<Int> = liveInt
         var counter1 = 0
-        val watcher1 = readableLive.watchEagerly(executor) {
+        val watcher1 = readableLive.watchEagerly {
             counter1++
         }
         expect(counter1).toBe(1)
@@ -20,7 +18,7 @@ class KotlinJvmSyntaxTest {
         liveInt.value = 3
         var counter2 = 0
         expect(counter1).toBe(3)
-        val watcher2 = liveInt.watchEagerly(executor) {
+        val watcher2 = liveInt.watchEagerly {
             counter2++
         }
         expect(counter2).toBe(1)

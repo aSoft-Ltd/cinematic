@@ -1,7 +1,5 @@
 package cinematic.internal
 
-import koncurrent.Executor
-import koncurrent.SynchronousExecutor
 import cinematic.MutableLive
 import cinematic.Watcher
 import kotlin.math.max
@@ -88,11 +86,20 @@ internal class SingleWatchableLiveImpl<S>(
         mapQueue.clear()
     }
 
-    override fun watchRaw(executor: Executor?, mode: WatchMode?, callback: ((state: S) -> Unit)?): Watcher {
+//    override fun watchRaw(executor: Executor?, mode: WatchMode?, callback: ((state: S) -> Unit)?): Watcher {
+//        val cb = callback ?: throw IllegalStateException("A callback to a live object must not be null or undefined")
+//        val md = mode ?: WatchMode.Default
+//        val ex = executor ?: SynchronousExecutor
+//        val watcher = WatcherImpl(watchers, ex, cb)
+//        watchers.add(watcher)
+//        if (md == WatchMode.Eagerly) watcher.execute(value)
+//        return watcher
+//    }
+
+    override fun watchRaw(mode: WatchMode?, callback: ((state: S) -> Unit)?): Watcher {
         val cb = callback ?: throw IllegalStateException("A callback to a live object must not be null or undefined")
         val md = mode ?: WatchMode.Default
-        val ex = executor ?: SynchronousExecutor
-        val watcher = WatcherImpl(watchers, ex, cb)
+        val watcher = WatcherImpl(watchers, cb)
         watchers.add(watcher)
         if (md == WatchMode.Eagerly) watcher.execute(value)
         return watcher

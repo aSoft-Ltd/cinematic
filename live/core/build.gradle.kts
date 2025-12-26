@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.targets.js.npm.tasks.KotlinNpmInstallTask
-
 plugins {
     kotlin("multiplatform")
     id("tz.co.asoft.library")
@@ -20,36 +18,16 @@ kotlin {
     val nativeTargets = osxTargets + /*ndkTargets +*/ linuxTargets + mingwTargets
 
     sourceSets {
-        val commonMain by getting {
-            dependencies {
-                api(libs.koncurrent.executors.core)
-            }
+        commonMain.dependencies {
+            api(libs.kotlinx.exports)
         }
-
-        val commonTest by getting {
-            dependencies {
-                implementation(libs.kommander.core)
-                implementation(libs.koncurrent.executors.mock)
-            }
+        commonTest.dependencies {
+            implementation(libs.kommander.core)
+            implementation(libs.koncurrent.executors.mock)
         }
 
         if (Targeting.JVM) jvmTest.dependencies {
             implementation(kotlin("test-junit5"))
-        }
-
-        val nonJvmMain by creating {
-            dependsOn(commonMain)
-        }
-
-//        val jsMain by getting { // untill https://youtrack.jetbrains.com/issue/KT-80014 gets fixed
-//            dependsOn(nonJvmMain)
-//        }
-
-        (nativeTargets).forEach {
-            val main by it.compilations.getting {}
-            main.defaultSourceSet {
-                dependsOn(nonJvmMain)
-            }
         }
     }
 }

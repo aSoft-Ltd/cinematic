@@ -1,6 +1,7 @@
 package cinematic.internal
 
 import kotlin.jvm.JvmField
+import cinematic.Live
 
 /**
  * A Mode on which one can watch a [Live] object

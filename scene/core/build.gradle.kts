@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.targets.js.npm.tasks.KotlinNpmInstallTask
-
 plugins {
     id("com.android.library")
     kotlin("multiplatform")

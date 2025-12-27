@@ -2,20 +2,16 @@
 
 package cinematic
 
-import koncurrent.Executor
-import koncurrent.SynchronousExecutor
-import react.useEffect
 import react.useEffectWithCleanup
 import react.useState
 
 @JsExport
-fun <S> useNullableLive(live: Live<S>?, executor: Executor? = null): S? {
+fun <S> useNullableLive(live: Live<S>?): S? {
     var state by useState(live?.value)
-    useEffectWithCleanup (live, executor) {
-        val e = executor ?: SynchronousExecutor
-        val watcher = if (state == null) live?.watchEagerly(e) {
+    useEffectWithCleanup(live) {
+        val watcher = if (state == null) live?.watchEagerly {
             state = it
-        } else live?.watchLazily(e) {
+        } else live?.watchLazily {
             state = it
         }
         onCleanup { watcher?.stop() }
@@ -24,16 +20,15 @@ fun <S> useNullableLive(live: Live<S>?, executor: Executor? = null): S? {
 }
 
 @JsExport
-fun <S> useLive(live: Live<S>, executor: Executor? = null): S {
+fun <S> useLive(live: Live<S>): S {
     var state by useState(live.value)
-    useEffectWithCleanup(live, executor) {
-        val e = executor ?: SynchronousExecutor
-        val watcher = live.watchLazily(e) { state = it }
+    useEffectWithCleanup(live) {
+        val watcher = live.watchLazily { state = it }
         onCleanup { watcher.stop() }
     }
     return state
 }
 
-inline fun <S> Live<S>.watchAsState(executor: Executor = SynchronousExecutor) = useLive(this, executor)
+inline fun <S> Live<S>.watchAsState() = useLive(this)
 
-inline fun <S> Live<S>?.watchAsState(executor: Executor = SynchronousExecutor) = useNullableLive(this, executor)
+inline fun <S> Live<S>?.watchAsState() = useNullableLive(this)

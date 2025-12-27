@@ -22,8 +22,8 @@ kotlin {
             api(libs.kotlinx.exports)
         }
         commonTest.dependencies {
+
             implementation(libs.kommander.core)
-            implementation(libs.koncurrent.executors.mock)
         }
 
         if (Targeting.JVM) jvmTest.dependencies {

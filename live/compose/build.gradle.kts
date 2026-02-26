@@ -38,7 +38,7 @@ kotlin {
             @OptIn(ExperimentalComposeLibrary::class)
             dependencies {
                 implementation(compose.desktop.currentOs)
-                implementation(compose.uiTestJUnit4)
+                implementation(compose.desktop.uiTestJUnit4)
             }
         }
     }
